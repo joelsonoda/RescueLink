@@ -5,11 +5,11 @@ package com.balihoo.rescuelink.model;
  */
 public class Address {
 
-	private String Line1;
-	private String Line2;
-	private String Line3;
-	private String City;
-	private String State;
-	private String Zip;
-	private String Country;
+	private String line1;
+	private String line2;
+	private String line3;
+	private String city;
+	private String state;
+	private String zip;
+	private String country;
 }

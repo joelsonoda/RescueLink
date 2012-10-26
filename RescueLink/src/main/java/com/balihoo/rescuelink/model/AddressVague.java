@@ -6,8 +6,8 @@ package com.balihoo.rescuelink.model;
  */
 public class AddressVague {
 
-	private String City;
-	private String State;
-	private String Country;
-	private String Description;
+	private String city;
+	private String state;
+	private String country;
+	private String description;
 }
