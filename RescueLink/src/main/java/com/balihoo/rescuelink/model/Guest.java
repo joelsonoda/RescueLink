@@ -1,14 +1,19 @@
 package com.balihoo.rescuelink.model;
 
+import java.util.ArrayList;
 import org.joda.time.DateTime;
 
-import java.util.ArrayList;
-
 /**
- * Someone who has stayed or is staying at the mission and information about them.
+ * Someone who has stayed or is staying at the mission and information 
+ * about them.
  */
 public class Guest {
 
+	public enum genders {MALE, FEMALE};
+	public enum incomeFrequencies {WEEKLY, MONTHLY, NONE};
+	public enum maritalStatuses {MARRIED, SINGLE, DIVORCED, WIDOWER, WIDOW, 
+		UNKNOWN}
+	
 	// Identifying
 	private String firstName = "";
 	private String lastName = "";
@@ -22,20 +27,20 @@ public class Guest {
 	private Boolean employed;
 	private Boolean unableToWork;
 	private Boolean hasId;
-	private Boolean parole;
+	private Boolean parolee;
 	private Boolean ownsCar;
 	private AddressVague whereBorn;
 	private AddressVague lastResidedIn;
 	private DateTime birthYearEstimate;
-	private enum incomeFrequency {WEEKLY, MONTHLY}
 	private int incomeAmount;
+	private incomeFrequencies incomeFrequency = incomeFrequencies.NONE;
 	private String medications = "";
 	private String medicalCondition = "";
 	private String allergies = "";
 	private Contact emergencyContact;
 
 	// Physical description
-	private enum gender {MALE, FEMALE};
+	private genders gender = genders.MALE;
 	private String race; // enum?
 	private String height = ""; // We could do these more strictly, but it seems that a string allows for different locales without
 	private String weight = ""; // difficulty and I can't think of needing to do anything programmatically with them.
@@ -46,7 +51,7 @@ public class Guest {
 	private ArrayList<DateTime> arrivalDates;  // We should do this different. Leaving it here to remind me later.
 	private ArrayList<DateTime> departureDates;
 	private String comments = "";
-	private enum maritalStatus {MARRIED, SINGLE, DIVORCED, WIDOWER, WIDOW}
+	private maritalStatuses maritalStatus = maritalStatuses.UNKNOWN;
 
 	public String getFirstName() {
 		return firstName;
@@ -128,12 +133,12 @@ public class Guest {
 		this.hasId = hasId;
 	}
 
-	public Boolean getParole() {
-		return parole;
+	public Boolean getParolee() {
+		return parolee;
 	}
 
-	public void setParole(Boolean parole) {
-		this.parole = parole;
+	public void setParolee(Boolean parole) {
+		this.parolee = parole;
 	}
 
 	public Boolean getOwnsCar() {
@@ -270,5 +275,29 @@ public class Guest {
 
 	public void setComments(String comments) {
 		this.comments = comments;
+	}
+
+	public incomeFrequencies getIncomeFrequency() {
+		return incomeFrequency;
+	}
+
+	public void setIncomeFrequency(incomeFrequencies incomeFrequency) {
+		this.incomeFrequency = incomeFrequency;
+	}
+
+	public genders getGender() {
+		return gender;
+	}
+
+	public void setGender(genders gender) {
+		this.gender = gender;
+	}
+
+	public maritalStatuses getMaritalStatus() {
+		return maritalStatus;
+	}
+
+	public void setMaritalStatus(maritalStatuses maritalStatus) {
+		this.maritalStatus = maritalStatus;
 	}
 }
