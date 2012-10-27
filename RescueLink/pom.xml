@@ -178,6 +178,11 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.vaadin.addon</groupId>
+			<artifactId>vodatime</artifactId>
+			<version>1.0.1</version>
+		</dependency>
 	</dependencies>
 
 </project>
